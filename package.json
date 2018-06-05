@@ -6,24 +6,22 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
+    "dev": "nodemon index",
     "debug": "nodemon --inspect index --ignore data.json",
     "test": "jest --watchAll --noStackTrace",
     "start": "node index"
   },
   "homepage": "https://github.com/dev-academy-challenges/pupparazzi#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dev-academy-challenges/pupparazzi.git"
-  },
+  "repository": "git+https://github.com/dev-academy-challenges/pupparazzi.git",
   "bugs": {
     "url": "https://github.com/dev-academy-challenges/pupparazzi/issues"
   },
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "express-handlebars": "^3.0.0"
   },
   "devDependencies": {
     "jest": "^22.0.6",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.17.5"
   }
 }
