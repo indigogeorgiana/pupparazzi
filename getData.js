@@ -7,4 +7,9 @@ function getData (callback) {
   fs.readFile(filePath, 'utf8', callback)
 }
 
+function changeData (callback) {
+  const filePath = path.join(__dirname, 'data.json')
+  console.log(filePath)
+  fs.writeFIle(filePath, 'utf8', callback)
+}
 module.exports = getData
