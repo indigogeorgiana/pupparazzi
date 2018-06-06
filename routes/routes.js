@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 router.get('/puppies', (req, res) => {
   getData((err, data) => {
     if (err) {
-      res.send('unable to read data file')
+      res.send('unable to read data file').status(500)
     } else {
       const puppyData = JSON.parse(data)
       res.render('./puppies/index', puppyData)
