@@ -2,17 +2,17 @@
   "puppies": [
     {
       "id": 1,
-      "name": "Fluffikins11",
-      "owner": "Tim11",
+      "name": "Fluffikins ",
+      "owner": "Tim",
       "image": "/images/puppy1.jpg",
-      "breed": "Dragon11"
+      "breed": "Dragon"
     },
     {
       "id": 2,
-      "name": "Coco22",
+      "name": "Coco2244",
       "owner": "Chloe",
       "image": "/images/puppy2.jpg",
-      "breed": "Labrador22"
+      "breed": "Labrador2244"
     },
     {
       "id": 3,

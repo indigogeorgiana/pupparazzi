@@ -64,7 +64,7 @@ router.post('/puppies/edit/:id', (req, res) => {
         if (err) {
           res.send('unable to save the file').status(500)
         } else {
-          res.redirect('/')
+          res.redirect('/puppies/' + id)
         }
       })
     }
