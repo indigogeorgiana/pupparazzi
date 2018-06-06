@@ -52,9 +52,29 @@ router.post('/puppies/edit/:id', (req, res) => {
   const name = req.body.name
   const breed = req.body.breed
   const owner = req.body.owner
-  res.send(name)
-  console.log(name)
-  // res.render('puppies/view', puppy)
+  puppyDataGet(pupFileData)
+  function pupFileData (err, data) {
+    if (err) {
+      res.send('error recieved')
+    } else {
+      const id = Number(req.params.id)
+      const puppies = JSON.parse(data)
+      console.log(puppies.puppies[1].name)
+      puppies.puppies[id - 1].name = name
+      puppies.puppies[id - 1].breed = breed
+      puppies.puppies[id - 1].owner = owner
+      const newPuppies = JSON.stringify(puppies, null, 3)
+      puppyDataWrite(newPuppies, (err, data) => {
+        if (err) { res.send('error sending data').status(500) } else {
+          res.redirect('/puppies/' + id)
+        }
+      })
+    }
+  }
 })
+
+// router.post('/puppies/edit/:id', (req, res) => {
+//   res.send(req.body)
+// })
 
 module.exports = router

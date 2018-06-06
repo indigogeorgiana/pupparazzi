@@ -3,15 +3,15 @@ const path = require('path')
 
 function getFile (callback) {
   const puppyPath = path.join(__dirname, 'data.json')
-
   fs.readFile(puppyPath, 'utf8', callback)
 }
 
-funtion writeToFile () {
-
-
+function writeToFile (puppies, callback) {
+  const puppyPath = path.join(__dirname, 'data.json')
+  fs.writeFile(puppyPath, puppies, 'utf8', callback)
+}
 
 module.exports = {
-  getFile
-  // writeToFile
+  getFile,
+  writeToFile
 }
