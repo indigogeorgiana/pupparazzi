@@ -2,10 +2,7 @@
   "puppies": [
     {
       "id": 1,
-      "name": "Fido",
-      "owner": "Fred",
-      "image": "/images/puppy1.jpg",
-      "breed": "Labrador"
+      "image": "/images/puppy1.jpg"
     },
     {
       "id": 2,
@@ -16,7 +13,7 @@
     },
     {
       "id": 3,
-      "name": "Magnum",
+      "name": "Anthonu",
       "owner": "Michael",
       "image": "/images/puppy3.jpg",
       "breed": "Rottweiler"
@@ -44,10 +41,8 @@
     },
     {
       "id": 7,
-      "name": "Bron",
-      "owner": "Ricky",
-      "image": "/images/puppy7.jpg",
-      "breed": "Labrador"
+      "owner": "bron",
+      "image": "/images/puppy7.jpg"
     }
   ]
 }

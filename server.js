@@ -5,8 +5,6 @@ const puppiesroutes = require('./puppiesroutes')
 
 const server = express()
 
-
-
 // Middleware
 server.engine('hbs', hbs({
   defaultLayout: 'main',

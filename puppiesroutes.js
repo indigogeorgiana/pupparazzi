@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// User story 3
+// User story 3a
 
 router.get('/edit/:id', (req, res) => {
   functions.getData((err, data) => {
