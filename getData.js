@@ -7,5 +7,11 @@ function getFile (callback) {
   fs.readFile(puppyPath, 'utf8', callback)
 }
 
+funtion writeToFile () {
 
-module.exports = getFile
+
+
+module.exports = {
+  getFile
+  // writeToFile
+}
