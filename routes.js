@@ -1,6 +1,6 @@
 const express = require('express')
 const getData = require('./getData.js')
-const writeNames = require('./names.js')
+const names = require('./names.js')
 
 const router = express.Router()
 
@@ -55,28 +55,21 @@ router.post('/puppies/:id', function (req, res) {
 
   getData(getPuppies)
   function getPuppies (err, data) {
-  // read names.json into a js object
-  // Create an object that represents all the data of the puppy we are going to update
     if (err) {
       res.send('unable to read the file').status(500)
     } else {
       const nameData = JSON.parse(data)
-      // push the new name onto the names array
-      // Update the puppy in the array
-      // Read in the JSON file and locate the puppy we are going to update
       const puppyData = nameData.puppies.find(pup => pup.id === id)
       puppyData.name = name
       puppyData.breed = breed
       puppyData.owner = owner
       const newObject = JSON.stringify(nameData, null, 2)
-      // turn the js object into a string
-      // save the string back to names.json
-      writeNames.writeNames(newObject, (err) => {
+      
+      names.writeNames(newObject, (err) => {
         if (err) {
           res.send('unable to save the file').status(500)
         } else {
-          // Redirect to the get /puppies/edit/:id route
-          res.redirect('/puppies/edit/')
+          res.redirect('/puppies')
         }
       })
     }

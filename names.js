@@ -7,7 +7,7 @@ function getNames (callback) {
 }
 
 function writeNames (nameString, callback) {
-  const filePath = path.join(__dirname, 'names.json')
+  const filePath = path.join(__dirname, 'data.json')
   fs.writeFile(filePath, nameString, 'utf8', callback)
 }
 
