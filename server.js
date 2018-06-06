@@ -4,7 +4,7 @@ const routes = require('./routes')
 
 const server = express()
 
- server.use('/', routes)
+server.use('/', routes)
 
 // Middleware
 server.engine('hbs', hbs({
