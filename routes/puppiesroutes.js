@@ -1,6 +1,6 @@
 const express = require('express')
 const fs = require('fs')
-const functions = require('./functions')
+const functions = require('../functions')
 
 const router = express.Router()
 
