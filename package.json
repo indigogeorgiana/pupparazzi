@@ -6,7 +6,7 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "debug": "nodemon --inspect index --ignore data.json",
+    "debug": "nodemon index --ignore data.json",
     "test": "jest --watchAll --noStackTrace",
     "start": "node index"
   },
