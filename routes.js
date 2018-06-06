@@ -52,32 +52,35 @@ router.get('/puppies/edit/:id', (req, res) => {
   })
 })
 router.post('/puppies/edit/:id', (req, res) => {
+  const name = req.body.name
+  console.log(name)
+  res.render('./puppies/index', pupData)
   const id = Number(req.params.id)
-  const puppyInfo = {
-    id: id,
-    name: req.body.name,
-    owner: req.body.owner,
-    breed: req.body.breed
-  }
+  // const puppyInfo = {
+  //   id: id,
+  //   name: req.body.name,
+  //   owner: req.body.owner,
+  //   breed: req.body.breed
+  // }
 
-  getData((err, data) => {
-    if (err) {
-      res.status(500).send('error')
-    } else {
-      const pupData = JSON.parse(data)
-      pupData.puppies[id - 1].name = puppyInfo.name
-      pupData.puppies[id - 1].owner = puppyInfo.owner
-      pupData.puppies[id - 1].breed = puppyInfo.breed
+  // getData((err, data) => {
+  //   if (err) {
+  //     res.status(500).send('error')
+  //   } else {
+  //     const pupData = JSON.parse(data)
+  //     pupData.puppies[id - 1].name = puppyInfo.name
+  //     pupData.puppies[id - 1].owner = puppyInfo.owner
+  //     pupData.puppies[id - 1].breed = puppyInfo.breed
 
-      fs.writeFile('./data.json', JSON.stringify(pupData), (err) => {
-        if (err) {
-          res.status(500).send('error')
-        } else {
-          res.redirect('/puppies/:id')
-        }
-      })
-    }
-  })
+  //     fs.writeFile('./data.json', JSON.stringify(pupData), (err) => {
+  //       if (err) {
+  //         res.status(500).send('error')
+  //       } else {
+  //         res.redirect('/puppies/:id')
+  //       }
+  //     })
+  //   }
+  // })
 })
 
 module.exports = router
