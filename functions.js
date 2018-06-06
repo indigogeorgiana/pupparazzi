@@ -8,6 +8,14 @@ function getData (cb) {
   fs.readFile(filePath, 'utf8', cb)
 }
 
+
+function writeData (newString, cb) {
+  const filePath = path.join(__dirname, 'data.json')
+  fs.writeFile(filePath, newString, 'utf8', cb)
+}
+
+
 module.exports = {
-  getData
-} 
+  getData,
+  writeData
+}
