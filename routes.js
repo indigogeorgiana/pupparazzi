@@ -76,7 +76,7 @@ router.post('/puppies/:id', function (req, res) {
           res.send('unable to save the file').status(500)
         } else {
           // Redirect to the get /puppies/edit/:id route
-          res.redirect('/puppies/:id/name')
+          res.redirect('/puppies/edit/')
         }
       })
     }
